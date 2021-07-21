@@ -19,7 +19,8 @@ h2 {
     text-align: center;
 }
 
-.title{
+.mainTitle{
+    transform: skew(5deg, 4deg);
     text-align: center;
 }
 .button {
@@ -49,6 +50,7 @@ h2 {
 .topPhoto{
     margin: 15px;
     border-radius: 8px;
+    float:left
 }
 .copy{
     text-align: center;
