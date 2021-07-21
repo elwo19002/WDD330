@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<title>Find My Forecast</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="forecast.jpg" alt="forecast photo" class=topPhoto>
+    <div class="title"><h1>Find Your Forecast!</h1></div>
+    <hr>
+    <script>
+        var place = prompt("Please enter a city and state to get your weather forecast", "Salt Lake City, Utah");
+        var name = prompt("Please enter a city and state to get your weather forecast", "John Smith");
+    </script>
+    <br>
+    <br>
+    <h2>
+      Hey <script type="text/javascript">document.write(name)</script>, here is your forecast for the next week in 
+      <script type="text/javascript">document.write(place)</script>. Enjoy!
+    </h2>
+    <div class="weatherWidget" ></div>
+    <br>
+    <button class=button onClick="window.location.reload();">Click Here To Get A New Forecast</button>
+    <br>
+    
+
+    <script>
+      window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+      window.weatherWidgetConfig.push({
+          selector:".weatherWidget",
+          apiKey:"WBVUQZFDZC86WQRHMWFVAB37Q", 
+          location: place,
+          unitGroup:"us",
+          forecastDays:7, 
+          showConditions:true
+      });
+     
+      (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+   </script>
+   <footer class=copy>
+       <hr>
+       &copy; Copyright 2021 - Student: Hyrum Elwood - Class: WDD 330 - Instructor: Gary James
+   </footer>
+</body>
+
+
+
+</html>
